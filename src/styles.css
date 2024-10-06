@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+  --mainColor: #10375a;
+  --lightMainColor: #1a6db9;
+  --secindaryColor: #d8b600;
+}

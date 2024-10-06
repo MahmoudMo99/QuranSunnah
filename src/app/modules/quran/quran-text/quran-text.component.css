@@ -1,0 +1,51 @@
+.surah-card {
+  border-radius: 5px;
+  /* height: 7rem; */
+  width: 15rem;
+  background-color: white;
+  cursor: pointer;
+  border: 2px dashed var(--lightMainColor);
+  transition: box-shadow 0.2s;
+}
+.surah-card:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.surah-number {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--lightMainColor);
+}
+.surah-number span {
+  color: white;
+}
+.surah-name {
+  color: var(--mainColor);
+}
+.icon-div {
+  position: relative;
+}
+
+.heart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.heart-icon .fa-solid {
+  display: none;
+}
+
+.heart-icon:hover .fa-regular {
+  display: none;
+}
+
+.heart-icon:hover .fa-solid {
+  display: inline;
+}
+.card-link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}

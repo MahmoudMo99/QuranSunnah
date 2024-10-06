@@ -1,0 +1,30 @@
+<div class="container my-3">
+  <h1 class="pb-5 text-center">سور القرآن الكريم</h1>
+  <div class="row d-flex justify-content-evenly gap-4">
+    <div class="col-1 surah-card p-3" *ngFor="let surah of surahs">
+      <a [routerLink]="['/surah', surah.number]" class="card-link">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-between">
+            <div class="surah-number d-flex justify-content-center align-items-center">
+              <span class="text-center">{{ surah.number }}</span>
+            </div>
+            <!-- <div class="fs-4 icon-div">
+              <div class="heart-icon">
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <span></span>
+            </div> -->
+          </div>
+          <div class="col-12 pt-3">
+            <h4 class="surah-name">{{ surah.name }}</h4>
+            <p class="m-0 fs-5">
+              <span>{{ translateRevelationType(surah.revelationType) }} - <span>عدد آياتها {{
+                  surah.ayahs.length}}</span></span>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

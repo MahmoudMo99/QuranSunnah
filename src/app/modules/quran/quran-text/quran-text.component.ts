@@ -1,7 +1,7 @@
 import { Component, DestroyRef, OnInit } from '@angular/core';
 import { QuranService } from 'src/app/services/quran.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { IGettAllSurahs } from 'src/app/models/iapiresponse';
+import { IGetAllSurahs } from 'src/app/models/iapiresponse';
 
 @Component({
   selector: 'app-quran-text',
@@ -9,7 +9,7 @@ import { IGettAllSurahs } from 'src/app/models/iapiresponse';
   styleUrls: ['./quran-text.component.css'],
 })
 export class QuranTextComponent implements OnInit {
-  surahs: IGettAllSurahs[] = [];
+  surahs: IGetAllSurahs[] = [];
 
   constructor(
     private quranService: QuranService,
@@ -22,10 +22,10 @@ export class QuranTextComponent implements OnInit {
 
   getAllSurahs() {
     this.quranService
-      .getSurahs()
+      .getAllSurahs()
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((res) => {
-        this.surahs = res.data.surahs;
+        this.surahs = res.data;
       });
   }
 

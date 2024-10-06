@@ -1,0 +1,42 @@
+.ayah-number-circle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--lightMainColor);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.ayah-number-circle:hover {
+  background-color: var(--mainColor);
+}
+
+.ayahs {
+  display: block;
+  font-size: 18px;
+  line-height: 2.5;
+  text-align: justify;
+}
+
+.ayah {
+  display: inline;
+  font-family: "Amiri", serif;
+}
+
+.page-divider {
+  margin: 20px 0;
+  border-top: 2px solid #000;
+}
+
+.page-number {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}

@@ -1,21 +1,24 @@
 export interface IAPIResponse<T> {
-  message: string;
+  status: string;
+  code: number;
   data: T;
-  succeeded: boolean;
-  statusCode: number;
-  meta: any;
-  errors: { [key: string]: string[] };
 }
 
-export interface IGetSurahResponse {
-  surahs: IGettAllSurahs[];
-}
-
-export interface IGettAllSurahs {
+export interface IGetAllSurahs {
   number: number;
   name: string;
   englishName: string;
   englishNameTranslation: string;
+  numberOfAyahs: number;
+  revelationType: string;
+}
+
+export interface IGetAllSurahAyat {
+  number: number;
+  name: string;
+  englishName: string;
+  englishNameTranslation: string;
+  numberOfAyahs: number;
   revelationType: string;
   ayahs: IAyahsInfo[];
 }
@@ -31,3 +34,16 @@ export interface IAyahsInfo {
   hizbQuarter: number;
   sajda: boolean;
 }
+
+// export interface IGetSurahResponse {
+//   surahs: IGetAllSurahs[];
+// }
+
+// export interface IGetAllSurahs {
+//   number: number;
+//   name: string;
+//   englishName: string;
+//   englishNameTranslation: string;
+//   revelationType: string;
+//   ayahs: IAyahsInfo[];
+// }

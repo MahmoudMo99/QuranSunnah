@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-12">
+      <div *ngIf="surahData">
+        <h2>{{ surahData.name }} - {{ surahData.englishName }}</h2>
+        <p>{{ surahData.englishNameTranslation }} - {{ surahData.revelationType }}</p>
+
+        <h5 *ngIf="surahData.number !== 9 && surahData.number !== 1">{{ bismillah }}</h5>
+
+        <div *ngFor="let page of paginatedSurah; let pageIndex = index">
+          <div class="ayahs">
+            <span *ngFor="let ayah of page">
+              <span class="ayah"> {{ ayah.text }} <span class="ayah-number-circle">{{ ayah.numberInSurah
+                  }}</span></span>
+            </span>
+          </div>
+
+          <div class="page-number">
+            <span>صفحة {{ pageIndex + 1 }}</span>
+          </div>
+          <hr class="page-divider">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

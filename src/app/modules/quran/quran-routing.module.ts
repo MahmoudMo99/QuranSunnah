@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { QuranTextComponent } from './quran-text/quran-text.component';
 import { QuranAudioComponent } from './quran-audio/quran-audio.component';
 import { TafseerComponent } from './tafseer/tafseer.component';
+import { SurahComponent } from './surah/surah.component';
 
 const routes: Routes = [
-  { path: '', component: QuranTextComponent }, // المسار الافتراضي
-  { path: 'audio', component: QuranAudioComponent }, // مسار التلاوات
-  { path: 'tafseer', component: TafseerComponent }, // مسار التفسير
+  { path: '', component: QuranTextComponent },
+  { path: 'audio', component: QuranAudioComponent },
+  { path: 'tafseer', component: TafseerComponent },
+  { path: 'surah/:id', component: SurahComponent },
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

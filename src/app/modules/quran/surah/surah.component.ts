@@ -16,6 +16,7 @@ export class SurahComponent implements OnInit {
   bismillah: string = 'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
   itemsPerPage: number = 10;
   paginatedSurah: any[] = [];
+  totalSurahs: number = 114; // العدد الإجمالي للسور في القرآن
 
   constructor(
     private route: ActivatedRoute,
@@ -26,13 +27,26 @@ export class SurahComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.getSurahId();
+    this.scroll();
   }
 
   getSurahId() {
-    this.surahId = this.route.snapshot.params['id'];
-    this.loadSurah();
+    this.route.paramMap.subscribe((params) => {
+      this.surahId = +params.get('id')!;
+      this.loadSurah();
+    });
   }
   loadSurah(): void {
+    this.surahData = {
+      number: 0,
+      name: '',
+      englishName: '',
+      englishNameTranslation: '',
+      numberOfAyahs: 0,
+      revelationType: '',
+      ayahs: [],
+    };
+    this.paginatedSurah = [];
     this.quranService
       .getSurahAyat(this.surahId)
       .pipe(takeUntilDestroyed(this.destroyRef))
@@ -83,5 +97,36 @@ export class SurahComponent implements OnInit {
   translateRevelationType(type: string) {
     const revelationTypeArabic =
       this.translationService.translateRevelationType(type);
+  }
+  goToPreviousSurah() {
+    const previousSurahNumber = this.surahData.number - 1;
+    if (previousSurahNumber >= 1) {
+      this.router.navigate(['/surah', previousSurahNumber]);
+    }
+  }
+
+  goToNextSurah() {
+    const nextSurahNumber = this.surahData.number + 1;
+    if (nextSurahNumber <= this.totalSurahs) {
+      this.router.navigate(['/surah', nextSurahNumber]);
+    }
+  }
+
+  scroll() {
+    let btn = document.getElementById('to-top');
+    window.onscroll = function () {
+      if (window.scrollY >= 1200) {
+        btn!.style.display = 'block';
+      } else {
+        btn!.style.display = 'none';
+      }
+    };
+  }
+  scrollToTop() {
+    window.scrollTo({
+      left: 0,
+      top: 0,
+      behavior: 'smooth',
+    });
   }
 }

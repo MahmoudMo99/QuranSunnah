@@ -1,10 +1,8 @@
 .surah-card {
   border-radius: 5px;
-  /* height: 7rem; */
   width: 15rem;
   background-color: white;
   cursor: pointer;
-  border: 2px dashed var(--lightMainColor);
   transition: box-shadow 0.2s;
 }
 .surah-card:hover {

@@ -7,7 +7,12 @@ import { TafseerComponent } from './tafseer/tafseer.component';
 import { SurahComponent } from './surah/surah.component';
 
 @NgModule({
-  declarations: [QuranTextComponent, QuranAudioComponent, TafseerComponent, SurahComponent],
+  declarations: [
+    QuranTextComponent,
+    QuranAudioComponent,
+    TafseerComponent,
+    SurahComponent,
+  ],
   imports: [CommonModule, QuranRoutingModule],
 })
 export class QuranModule {}

@@ -1,42 +1,56 @@
-.ayah-number-circle {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 50%;
-  background-color: var(--lightMainColor);
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-}
-
-.ayah-number-circle:hover {
+.surah-header {
   background-color: var(--mainColor);
+  border-radius: 10px 10px 0 0;
+  color: white;
 }
-
+.surah-number-circle {
+  background-image: url("../../../../assets/star.0a97b5b482630cc28c0c.png");
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.bismillah {
+  font-family: "Amiri", serif !important;
+  font-size: 40px;
+}
 .ayahs {
   display: block;
-  font-size: 18px;
   line-height: 2.5;
-  text-align: justify;
 }
-
 .ayah {
   display: inline;
-  font-family: "Amiri", serif;
+  font-family: "Amiri", serif !important;
+  font-size: 40px;
 }
-
-.page-divider {
-  margin: 20px 0;
-  border-top: 2px solid #000;
+.ayah-number-circle {
+  background-image: url("../../../../assets/download.png");
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .page-number {
   text-align: center;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 20px;
   margin-top: 10px;
+  color: var(--mainColor);
+}
+
+.page-divider {
+  margin: 20px 0;
+  height: 2px;
+  background-color: var(--mainColor);
+  border-radius: 5px;
 }

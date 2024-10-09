@@ -23,18 +23,6 @@ export interface IGetAllSurahAyat {
   ayahs: IAyahsInfo[];
 }
 
-export interface IAyahsInfo {
-  number: number;
-  text: string;
-  numberInSurah: number;
-  juz: number;
-  manzil: number;
-  page: number;
-  ruku: number;
-  hizbQuarter: number;
-  sajda: boolean;
-}
-
 export interface IGetFullQuranResponse {
   surahs: IGetFullQuranSurahs[];
 }
@@ -46,4 +34,15 @@ export interface IGetFullQuranSurahs {
   englishNameTranslation: string;
   revelationType: string;
   ayahs: IAyahsInfo[];
+}
+export interface IAyahsInfo {
+  number: number;
+  text: string;
+  numberInSurah: number;
+  juz: number;
+  manzil: number;
+  page: number;
+  ruku: number;
+  hizbQuarter: number;
+  sajda: boolean;
 }

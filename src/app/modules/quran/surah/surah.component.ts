@@ -16,8 +16,7 @@ export class SurahComponent implements OnInit {
   bismillah: string = 'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
   itemsPerPage: number = 10;
   paginatedSurah: any[] = [];
-  totalSurahs: number = 114; // العدد الإجمالي للسور في القرآن
-
+  totalSurahs: number = 114;
   constructor(
     private route: ActivatedRoute,
     private quranService: QuranService,

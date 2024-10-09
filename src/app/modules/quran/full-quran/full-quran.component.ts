@@ -14,11 +14,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 })
 export class FullQuranComponent implements OnInit {
   fullQuranData: IGetFullQuranSurahs[] = [];
-  // paginatedAyahs: { pageNumber: number; ayahs: IAyahsInfo[] }[] = [];
-  paginatedAyahs: {
-    surah: IGetFullQuranSurahs;
-    pages: { pageNumber: number; ayahs: IAyahsInfo[] }[];
-  }[] = [];
+  paginatedAyahs: any[] = [];
 
   bismillah: string = 'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
 
@@ -57,53 +53,32 @@ export class FullQuranComponent implements OnInit {
       );
   }
 
-  // splitAyahsByPage(): void {
-  //   // تأكد من وجود بيانات كاملة للقرآن
-  //   if (this.fullQuranData.length > 0) {
-  //     // تجميع جميع الآيات في مصفوفة واحدة
-  //     const allAyahs: IAyahsInfo[] = this.fullQuranData.flatMap(
-  //       (surah) => surah.ayahs
-  //     );
+  // الدالة
+  //splitAyahsByPage
+  // تقوم بتقسيم الآيات المسترجعة من بيانات القرآن (fullQuranData)
+  // إلى صفحات،
 
-  //     let currentPage = allAyahs[0].page; // الصفحة الأولى
-  //     let currentPageAyahs: IAyahsInfo[] = [];
+  //بحيث يتم تخزين كل صفحة والآيات التي تحتويها.
+  // يتم أيضًا تقسيم السور بحيث يكون لكل سورة صفحات تحتوي على آياتها.
 
-  //     allAyahs.forEach((ayah) => {
-  //       if (ayah.page !== currentPage) {
-  //         // إضافة الآيات إلى paginatedAyahs
-  //         this.paginatedAyahs.push({
-  //           pageNumber: currentPage,
-  //           ayahs: currentPageAyahs,
-  //         });
-  //         // بدء صفحة جديدة
-  //         currentPage = ayah.page;
-  //         currentPageAyahs = [];
-  //       }
-  //       // إضافة الآية الحالية إلى صفحة الحالية
-  //       currentPageAyahs.push(ayah);
-  //     });
-
-  //     // إضافة آخر مجموعة من الآيات بعد انتهاء التكرار
-  //     if (currentPageAyahs.length > 0) {
-  //       this.paginatedAyahs.push({
-  //         pageNumber: currentPage,
-  //         ayahs: currentPageAyahs,
-  //       });
-  //     }
-  //   } else {
-  //     console.error('Full Quran data is not available.');
-  //   }
-  // }
+  // في النهاية
+  // يتم تخزين كل هذه البيانات في مصفوفة
+  //paginatedAyahs لتسهيل عرضها لاحقًا.
 
   splitAyahsByPage(): void {
     if (this.fullQuranData.length > 0) {
-      // تجميع جميع الآيات في مصفوفة واحدة
+      // هنا يتم التكرار على كل سورة موجودة في بيانات
+      //fullQuranData.
+      // كل سورة تحتوي على عدة آيات (ayahs).
       this.fullQuranData.forEach((surah) => {
-        let currentPage = surah.ayahs[0].page; // الصفحة الأولى
-        let currentPageAyahs: IAyahsInfo[] = [];
-        let pages: { pageNumber: number; ayahs: IAyahsInfo[] }[] = [];
-
+        let currentPage = surah.ayahs[0].page; // الصفحة الحالية
+        let currentPageAyahs: IAyahsInfo[] = []; // الايات الموجودة فى الصفحة الحالية
+        let pages: { pageNumber: number; ayahs: IAyahsInfo[] }[] = []; // مصفوفة لتخزين كل صفحات السورة.
+        // يتم التكرار على كل آية موجودة في السورة.
         surah.ayahs.forEach((ayah) => {
+          // هنا يتم التحقق من ما إذا كانت الآية الحالية تنتمي إلى صفحة جديدة
+          //(أي أن رقم الصفحة ayah.page ليس هو نفس currentPage).
+
           if (ayah.page !== currentPage) {
             // إضافة الآيات إلى الصفحات
             pages.push({

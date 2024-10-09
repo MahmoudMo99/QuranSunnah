@@ -101,14 +101,14 @@ export class SurahComponent implements OnInit {
   goToPreviousSurah() {
     const previousSurahNumber = this.surahData.number - 1;
     if (previousSurahNumber >= 1) {
-      this.router.navigate(['/surah', previousSurahNumber]);
+      this.router.navigate(['/quran/surah', previousSurahNumber]);
     }
   }
 
   goToNextSurah() {
     const nextSurahNumber = this.surahData.number + 1;
     if (nextSurahNumber <= this.totalSurahs) {
-      this.router.navigate(['/surah', nextSurahNumber]);
+      this.router.navigate(['/quran/surah', nextSurahNumber]);
     }
   }
 

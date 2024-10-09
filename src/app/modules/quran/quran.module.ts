@@ -5,6 +5,7 @@ import { QuranTextComponent } from './quran-text/quran-text.component';
 import { QuranAudioComponent } from './quran-audio/quran-audio.component';
 import { TafseerComponent } from './tafseer/tafseer.component';
 import { SurahComponent } from './surah/surah.component';
+import { FullQuranComponent } from './full-quran/full-quran.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { SurahComponent } from './surah/surah.component';
     QuranAudioComponent,
     TafseerComponent,
     SurahComponent,
+    FullQuranComponent,
   ],
   imports: [CommonModule, QuranRoutingModule],
 })

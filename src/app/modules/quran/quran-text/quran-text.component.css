@@ -1,11 +1,21 @@
 .surah-card {
   border-radius: 5px;
-  width: 15rem;
   background-color: white;
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  transition: all 0.2s;
+  border: 1px solid var(--lightMainColor);
+}
+.fullQuran-card {
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--lightMainColor);
 }
 .surah-card:hover {
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.fullQuran-card:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .surah-number {
@@ -19,6 +29,7 @@
 }
 .surah-name {
   color: var(--mainColor);
+  font-weight: bold;
 }
 .icon-div {
   position: relative;

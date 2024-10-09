@@ -1,0 +1,11 @@
+<div class="container">
+  <h2 class="text-center mb-4">المصحف كامل</h2>
+  <div *ngIf="fullQuranData">
+    <div *ngFor="let surah of fullQuranData" class="row">
+      <div class="col-12 d-flex justify-content-between align-items-center">
+        <h3>{{ surah.name }} ({{ surah.englishName }})</h3>
+        <span>{{ surah.ayahs.length }} آية</span>
+      </div>
+    </div>
+  </div>
+</div>

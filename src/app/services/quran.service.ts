@@ -5,6 +5,7 @@ import {
   IAPIResponse,
   IGetAllSurahAyat,
   IGetAllSurahs,
+  IGetFullQuranResponse,
 } from '../models/iapiresponse';
 import { environment } from '../environments/environment';
 @Injectable({
@@ -23,9 +24,9 @@ export class QuranService {
     );
   }
 
-  // getSurahs(): Observable<IAPIResponse<IGetSurahResponse>> {
-  //   return this.http.get<IAPIResponse<IGetSurahResponse>>(
-  //     environment.fullQuran
-  //   );
-  // }
+  getFullQuran(): Observable<IAPIResponse<IGetFullQuranResponse>> {
+    return this.http.get<IAPIResponse<IGetFullQuranResponse>>(
+      environment.fullQuran
+    );
+  }
 }

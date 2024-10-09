@@ -35,15 +35,15 @@ export interface IAyahsInfo {
   sajda: boolean;
 }
 
-// export interface IGetSurahResponse {
-//   surahs: IGetAllSurahs[];
-// }
+export interface IGetFullQuranResponse {
+  surahs: IGetFullQuranSurahs[];
+}
 
-// export interface IGetAllSurahs {
-//   number: number;
-//   name: string;
-//   englishName: string;
-//   englishNameTranslation: string;
-//   revelationType: string;
-//   ayahs: IAyahsInfo[];
-// }
+export interface IGetFullQuranSurahs {
+  number: number;
+  name: string;
+  englishName: string;
+  englishNameTranslation: string;
+  revelationType: string;
+  ayahs: IAyahsInfo[];
+}

@@ -24,15 +24,10 @@ export class FullQuranComponent implements OnInit {
 
   loadFullQuran() {
     this.quranService
-      .getFullQuran() // استدعاء الدالة الصحيحة
+      .getFullQuran()
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((res) => {
-        if (res.code === 200 && res.status === 'OK') {
-          this.fullQuranData = res.data.surahs; // تعيين البيانات بشكل صحيح
-          console.log(this.fullQuranData); // للتأكد من أن البيانات تم جلبها بشكل صحيح
-        } else {
-          console.error('Failed to fetch surahs:', res.status); // التعامل مع الأخطاء
-        }
+        this.fullQuranData = res.data.surahs;
       });
   }
 }

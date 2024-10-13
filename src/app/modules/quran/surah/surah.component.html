@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container-fluid p-0" *ngIf="surahData">
   <button id="to-top" class="scroll-to-top" (click)="scrollToTop()"><i class="fas fa-arrow-up"></i>
   </button>
-  <div class="row sm my-5 bg-body rounded">
+  <div class="row sm my-5 bg-body rounded mx-3">
     <div class="col-12">
-      <div *ngIf="surahData">
+      <div>
         <div class="row d-flex align-items-center surah-header py-3 mb-4">
           <div class=" col-12 col-md-4 d-flex justify-content-center justify-content-md-start pb-3 pb-md-0">
             <h2 class="surah-name m-0">{{ surahData.name }}</h2>
@@ -19,21 +19,21 @@
           </div>
         </div>
 
-        <div class="px-2">
-          <h5 class="bismillah text-center" *ngIf="surahData.number !== 9 && surahData.number !== 1">{{ bismillah }}
-          </h5>
-          <div *ngFor="let page of paginatedSurah">
-            <div class="ayahs text-center">
-              <span *ngFor="let ayah of page.ayahs">
-                <span class="ayah">{{ ayah.text }}<span class="ayah-number-circle text-center mx-2">{{
-                    ayah.numberInSurah }}</span></span>
-              </span>
-            </div>
-            <div class="page-number">
-              <span>{{ page.pageNumber }}</span>
-            </div>
-            <div class="page-divider"></div>
+        <h5 class="bismillah text-center fs-1" *ngIf="surahData.number !== 9 && surahData.number !== 1">{{
+          bismillah
+          }}
+        </h5>
+        <div *ngFor="let page of paginatedSurah">
+          <div class="ayahs text-center">
+            <span *ngFor="let ayah of page.ayahs">
+              <span class="ayah fs-1">{{ ayah.text }}<span class="ayah-number-circle text-center mx-1">{{
+                  ayah.numberInSurah }}</span></span>
+            </span>
           </div>
+          <div class="page-number">
+            <span>{{ page.pageNumber }}</span>
+          </div>
+          <div class="page-divider"></div>
         </div>
         <div class="d-flex justify-content-between my-4">
           <button class="btn btn-secondary" (click)="goToPreviousSurah()" [disabled]="surahData.number === 1">

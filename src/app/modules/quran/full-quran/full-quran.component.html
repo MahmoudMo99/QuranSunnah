@@ -1,24 +1,43 @@
-<div class="container">
+<div class=" container-fluid p-0" *ngIf="paginatedAyahs.length > 0">
   <button id="to-top" class="scroll-to-top" (click)="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
   <h2 class="text-center my-4">القرآن الكريم</h2>
-  <div class="row sm my-5 bg-body rounded">
+  <div class="row sm my-5 bg-body rounded mx-3">
     <div class="col-12">
       <div *ngIf="paginatedAyahs.length > 0">
         <div *ngFor="let surahData of paginatedAyahs">
-          <h3 class="surah-name text-center my-4">
-            {{ surahData.surah.name }} (رقم السورة: {{ surahData.surah.number }}, عدد الآيات: {{
-            surahData.surah.ayahs.length }})
-          </h3>
 
+          <div class="row d-flex align-items-center surah-header py-3 mb-4">
+            <div class=" col-12 col-md-4 d-flex justify-content-center justify-content-md-start pb-3 pb-md-0">
+              <h2 class="surah-name m-0">{{ surahData.surah.name }}</h2>
+            </div>
+            <div class=" col-12 col-md-4 d-flex justify-content-center pb-3 pb-md-0">
+              <!-- <p class="m-0 fs-3"> تبدأ من صفحة : {{ surahData.ayahs[0].page }}</p> -->
+              <p class="m-0 fs-3"> عدد آياتها : {{ surahData.surah.ayahs.length }}</p>
+
+            </div>
+            <div class=" col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
+              <span class="surah-number-circle d-flex justify-content-center align-items-center">{{
+                surahData.surah.number
+                }}</span>
+            </div>
+          </div>
+
+          <h5 class="bismillah text-center fs-1" *ngIf="surahData.surah.number !== 9 && surahData.surah.number !== 1">
+            {{
+            bismillah
+            }}
+          </h5>
           <div *ngFor="let page of surahData.pages">
-            <h4 class="page-number text-center my-3">صفحة رقم: {{ page.pageNumber }}</h4>
             <div class="ayahs text-center">
               <span *ngFor="let ayah of page.ayahs">
-                <span class="ayah">{{ ayah.text }}<span class="ayah-number-circle text-center mx-2">{{
+                <span class="ayah fs-1">{{ ayah.text }}<span class="ayah-number-circle text-center mx-1">{{
                     ayah.numberInSurah
                     }}</span>
                 </span>
               </span>
+            </div>
+            <div class="page-number">
+              <span>{{ page.pageNumber }}</span>
             </div>
             <div class="page-divider"></div>
           </div>

@@ -19,7 +19,6 @@
 }
 .bismillah {
   font-family: "Amiri", serif !important;
-  font-size: 40px;
 }
 .ayahs {
   display: block;
@@ -28,7 +27,6 @@
 .ayah {
   display: inline;
   font-family: "Amiri", serif !important;
-  font-size: 40px;
 }
 .ayah-number-circle {
   background-image: url("../../../../assets/download.png");

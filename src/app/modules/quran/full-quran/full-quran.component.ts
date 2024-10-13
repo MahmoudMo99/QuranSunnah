@@ -6,13 +6,14 @@ import {
 } from 'src/app/models/iapiresponse';
 import { QuranService } from 'src/app/services/quran.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-full-quran',
   templateUrl: './full-quran.component.html',
   styleUrls: ['./full-quran.component.css'],
 })
-export class FullQuranComponent implements OnInit {
+export class FullQuranComponent implements OnInit, AfterViewInit {
   fullQuranData: IGetFullQuranSurahs[] = [];
   paginatedAyahs: any[] = [];
 
@@ -25,7 +26,10 @@ export class FullQuranComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadFullQuran();
-    this.scroll();
+  }
+
+  ngAfterViewInit(): void {
+    this.setupScrollButton();
   }
 
   loadFullQuran() {
@@ -112,13 +116,17 @@ export class FullQuranComponent implements OnInit {
     }
   }
 
-  scroll() {
+  setupScrollButton() {
     let btn = document.getElementById('to-top');
     window.onscroll = function () {
       if (window.scrollY >= 1200) {
-        btn!.style.display = 'block';
+        if (btn) {
+          btn.style.display = 'block';
+        }
       } else {
-        btn!.style.display = 'none';
+        if (btn) {
+          btn.style.display = 'none';
+        }
       }
     };
   }

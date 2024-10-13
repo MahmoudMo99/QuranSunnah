@@ -4,13 +4,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IAyahsInfo, IGetAllSurahAyat } from 'src/app/models/iapiresponse';
 import { QuranService } from 'src/app/services/quran.service';
 import { TranslateRevelationTypeService } from 'src/app/services/translate-revelation-type.service';
+import { AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-surah',
   templateUrl: './surah.component.html',
   styleUrls: ['./surah.component.css'],
 })
-export class SurahComponent implements OnInit {
+export class SurahComponent implements OnInit, AfterViewInit {
   surahId!: number;
   surahData!: IGetAllSurahAyat;
   bismillah: string = 'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
@@ -24,9 +25,13 @@ export class SurahComponent implements OnInit {
     public translationService: TranslateRevelationTypeService,
     private router: Router
   ) {}
+
   ngOnInit(): void {
     this.getSurahId();
-    this.scroll();
+  }
+
+  ngAfterViewInit(): void {
+    this.setupScrollButton();
   }
 
   getSurahId() {
@@ -111,16 +116,21 @@ export class SurahComponent implements OnInit {
     }
   }
 
-  scroll() {
+  setupScrollButton() {
     let btn = document.getElementById('to-top');
     window.onscroll = function () {
       if (window.scrollY >= 1200) {
-        btn!.style.display = 'block';
+        if (btn) {
+          btn.style.display = 'block';
+        }
       } else {
-        btn!.style.display = 'none';
+        if (btn) {
+          btn.style.display = 'none';
+        }
       }
     };
   }
+
   scrollToTop() {
     window.scrollTo({
       left: 0,

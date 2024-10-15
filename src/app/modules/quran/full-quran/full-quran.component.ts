@@ -6,14 +6,13 @@ import {
 } from 'src/app/models/iapiresponse';
 import { QuranService } from 'src/app/services/quran.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-full-quran',
   templateUrl: './full-quran.component.html',
   styleUrls: ['./full-quran.component.css'],
 })
-export class FullQuranComponent implements OnInit, AfterViewInit {
+export class FullQuranComponent implements OnInit {
   fullQuranData: IGetFullQuranSurahs[] = [];
   paginatedAyahs: any[] = [];
 
@@ -26,10 +25,6 @@ export class FullQuranComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.loadFullQuran();
-  }
-
-  ngAfterViewInit(): void {
-    this.setupScrollButton();
   }
 
   loadFullQuran() {
@@ -114,27 +109,5 @@ export class FullQuranComponent implements OnInit, AfterViewInit {
     } else {
       console.error('Full Quran data is not available.');
     }
-  }
-
-  setupScrollButton() {
-    let btn = document.getElementById('to-top');
-    window.onscroll = function () {
-      if (window.scrollY >= 1200) {
-        if (btn) {
-          btn.style.display = 'block';
-        }
-      } else {
-        if (btn) {
-          btn.style.display = 'none';
-        }
-      }
-    };
-  }
-  scrollToTop() {
-    window.scrollTo({
-      left: 0,
-      top: 0,
-      behavior: 'smooth',
-    });
   }
 }

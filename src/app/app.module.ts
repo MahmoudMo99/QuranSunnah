@@ -10,9 +10,10 @@ import { HadithModule } from './modules/hadith/hadith.module';
 import { QuestionsAndInfoModule } from './modules/questions-and-info/questions-and-info.module';
 import { MainInterceptor } from './interceptor/main.interceptor';
 import { LoaderComponent } from './components/loader/loader.component';
+import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 
 @NgModule({
-  declarations: [AppComponent, LoaderComponent],
+  declarations: [AppComponent, LoaderComponent, ScrollToTopComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

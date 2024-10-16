@@ -1,4 +1,33 @@
-<div class="tafseer-container">
-  <h1>تفسير القرآن الكريم</h1>
-  <p>هنا سيتم عرض التفسير لكل آية...</p>
+<button [hidden]="true" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tafsirModal">
+  عرض التفسير
+</button>
+
+<div class="modal fade" id="tafsirModal" tabindex="-1" aria-labelledby="tafsirModalLabel" aria-hidden="true"
+  (hidden.bs.modal)="clearContent()">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tafsirModalLabel">التفسير</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <select class="form-select" [(ngModel)]="selectedTafsir" (change)="loadTafsir()">
+          <option value="" selected disabled> اختر التفسير</option>
+          <option value="ar.jalalayn">تفسير الجلالين</option>
+          <option value="ar.qurtubi">تفسير القرطبي</option>
+          <option value="ar.waseet">التفسير الوسيط</option>
+          <option value="ar.miqbas">تفسير المقباس من تفسير بن عباس</option>
+          <option value="ar.baghawi">تفسير البغوي</option>
+        </select>
+        <hr />
+        <p *ngIf="tafsir">{{ tafsir.text }}</p>
+        <p *ngIf="loading">جارِ تحميل التفسير...</p>
+        <p *ngIf="error">{{ error }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+          (hidden.bs.modal)="clearContent()">إغلاق</button>
+      </div>
+    </div>
+  </div>
 </div>

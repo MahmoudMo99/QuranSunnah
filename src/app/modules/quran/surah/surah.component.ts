@@ -17,6 +17,7 @@ export class SurahComponent implements OnInit {
   itemsPerPage: number = 10;
   paginatedSurah: any[] = [];
   totalSurahs: number = 114;
+  selectedAyahId!: number;
   constructor(
     private route: ActivatedRoute,
     private quranService: QuranService,
@@ -109,5 +110,13 @@ export class SurahComponent implements OnInit {
     if (nextSurahNumber <= this.totalSurahs) {
       this.router.navigate(['/quran/surah', nextSurahNumber]);
     }
+  }
+  onAyahClick(ayahId: number) {
+    this.selectedAyahId = ayahId;
+    // عرض الـ Modal لعرض التفسير
+    const modalTrigger = document.querySelector(
+      '[data-bs-target="#tafsirModal"]'
+    ) as HTMLElement;
+    modalTrigger.click();
   }
 }

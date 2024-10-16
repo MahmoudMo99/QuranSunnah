@@ -6,6 +6,7 @@ import { QuranAudioComponent } from './quran-audio/quran-audio.component';
 import { TafseerComponent } from './tafseer/tafseer.component';
 import { SurahComponent } from './surah/surah.component';
 import { FullQuranComponent } from './full-quran/full-quran.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,6 @@ import { FullQuranComponent } from './full-quran/full-quran.component';
     SurahComponent,
     FullQuranComponent,
   ],
-  imports: [CommonModule, QuranRoutingModule],
+  imports: [CommonModule, QuranRoutingModule, FormsModule],
 })
 export class QuranModule {}

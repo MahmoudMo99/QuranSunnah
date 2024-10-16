@@ -8,6 +8,7 @@ import {
   IGetFullQuranResponse,
 } from '../models/iapiresponse';
 import { environment } from '../environments/environment';
+import { Itafseer } from '../models/itafseer';
 @Injectable({
   providedIn: 'root',
 })
@@ -28,5 +29,13 @@ export class QuranService {
     return this.http.get<IAPIResponse<IGetFullQuranResponse>>(
       environment.fullQuran
     );
+  }
+
+  getTafsir(
+    ayahId: number,
+    tafsirType: string
+  ): Observable<IAPIResponse<Itafseer>> {
+    const url = `https://api.alquran.cloud/v1/ayah/${ayahId}/${tafsirType}`;
+    return this.http.get<IAPIResponse<Itafseer>>(url);
   }
 }

@@ -1,0 +1,13 @@
+.form-select:focus-visible {
+  outline-color: var(--mainColor);
+  border: 2px solid var(--mainColor);
+  box-shadow: none !important;
+}
+.close-btn-rtl {
+  margin-right: auto;
+  margin-left: 0;
+  direction: rtl;
+}
+.close-btn-rtl:focus {
+  box-shadow: none !important;
+}

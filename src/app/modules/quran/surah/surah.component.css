@@ -70,3 +70,18 @@
   z-index: 100;
   display: none;
 }
+
+.ayah,
+.ayah-number-circle {
+  cursor: pointer;
+}
+
+.ayah {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ayah:hover {
+  background-color: #eee;
+  border-radius: 5px;
+}

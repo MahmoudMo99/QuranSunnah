@@ -24,10 +24,9 @@
         </h5>
         <div *ngFor="let page of paginatedSurah">
           <div class="ayahs text-center">
-            <span *ngFor="let ayah of page.ayahs">
-              <span class="ayah fs-1" (click)="onAyahClick(ayah.number)">{{ ayah.text }}<span
-                  class="ayah-number-circle text-center mx-1">{{
-                  ayah.numberInSurah }}</span></span>
+            <span *ngFor="let ayah of page.ayahs" (click)="onAyahClick(ayah.number , ayah.text)">
+              <span class="ayah fs-1">{{ayah.text}}</span>
+              <span class="ayah-number-circle text-center mx-1">{{ayah.numberInSurah}}</span>
             </span>
           </div>
           <div class="page-number">
@@ -46,5 +45,5 @@
       </div>
     </div>
   </div>
-  <app-tafseer [ayahId]="selectedAyahId"></app-tafseer>
+  <app-tafseer [ayahId]="selectedAyahId" [ayahText]="selectedAyahText"></app-tafseer>
 </div>

@@ -1,6 +1,6 @@
-export interface Itafseer {
-  text: string;
+export interface IGetAyah {
   number: number;
+  text: string;
   numberInSurah: number;
   juz: number;
   manzil: number;
@@ -8,7 +8,6 @@ export interface Itafseer {
   ruku: number;
   hizbQuarter: number;
   sajda: boolean;
-
   surah: {
     number: number;
     name: string;

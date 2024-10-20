@@ -17,6 +17,8 @@ export class FullQuranComponent implements OnInit {
   paginatedAyahs: any[] = [];
 
   bismillah: string = 'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
+  selectedAyahId!: number;
+  selectedAyahText!: string;
 
   constructor(
     private quranService: QuranService,
@@ -109,5 +111,15 @@ export class FullQuranComponent implements OnInit {
     } else {
       console.error('Full Quran data is not available.');
     }
+  }
+
+  onAyahClick(ayahId: number, ayahtext: string) {
+    this.selectedAyahId = ayahId;
+    this.selectedAyahText = ayahtext;
+    // عرض الـ Modal لعرض التفسير
+    const modalTrigger = document.querySelector(
+      '[data-bs-target="#tafsirModal"]'
+    ) as HTMLElement;
+    modalTrigger.click();
   }
 }

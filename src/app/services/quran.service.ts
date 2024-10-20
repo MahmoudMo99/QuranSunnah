@@ -21,7 +21,7 @@ export class QuranService {
 
   getSurahAyat(surah: number): Observable<IAPIResponse<IGetAllSurahAyat>> {
     return this.http.get<IAPIResponse<IGetAllSurahAyat>>(
-      `${environment.domain}/surah/${surah}/quran-uthmani`
+      `${environment.domain}surah/${surah}/quran-uthmani`
     );
   }
 
@@ -35,7 +35,12 @@ export class QuranService {
     ayahId: number,
     tafsirType: string
   ): Observable<IAPIResponse<Itafseer>> {
-    const url = `https://api.alquran.cloud/v1/ayah/${ayahId}/${tafsirType}`;
-    return this.http.get<IAPIResponse<Itafseer>>(url);
+    return this.http.get<IAPIResponse<Itafseer>>(`
+      ${environment.ayah}${ayahId}/${tafsirType}`);
+  }
+
+  getAyah(ayahId: number): Observable<IAPIResponse<Itafseer>> {
+    return this.http.get<IAPIResponse<Itafseer>>(`
+      ${environment.ayah}${ayahId}`);
   }
 }

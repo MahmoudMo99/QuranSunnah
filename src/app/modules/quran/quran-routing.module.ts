@@ -9,7 +9,6 @@ import { FullQuranComponent } from './full-quran/full-quran.component';
 const routes: Routes = [
   // { path: 'quran-surahs', component: QuranTextComponent },
   { path: '', component: QuranTextComponent }, // يظهر عند زيارة /quran
-
   { path: 'audio', component: QuranAudioComponent },
   { path: 'tafseer', component: TafseerComponent },
   { path: 'surah/:id', component: SurahComponent },

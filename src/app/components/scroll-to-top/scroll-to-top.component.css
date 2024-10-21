@@ -12,6 +12,7 @@
   cursor: pointer;
   z-index: 100;
   display: none;
+  border: 2px white solid;
 }
 
 .scroll-to-top.show {

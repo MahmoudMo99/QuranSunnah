@@ -1,9 +1,8 @@
-<div class="container my-3" *ngIf="surahs.length > 0">
+<div class="container my-5" *ngIf="surahs.length > 0">
   <!-- <h2 class="pb-3 text-center fw-bold">سور القرآن الكريم</h2> -->
-
   <div class="row d-flex justify-content-center mb-4 mx-2 mx-md-0">
     <div class="col-12 fullQuran-card p-3 ">
-      <a [routerLink]="['/full-quran']" class="card-link">
+      <a [routerLink]="['/quran/full-quran']" class="card-link">
         <div class="row">
           <div class="col-12">
             <div class="d-flex justify-content-center align-items-center">
@@ -14,7 +13,6 @@
       </a>
     </div>
   </div>
-
   <div class="row d-flex justify-content-between gap-4 mx-2 mx-md-0">
     <div class=" col-12 col-md-3 col-lg-2 surah-card p-3" *ngFor="let surah of surahs">
       <a [routerLink]="['/quran/surah', surah.number]" class="card-link">

@@ -11,9 +11,13 @@ import { QuestionsAndInfoModule } from './modules/questions-and-info/questions-a
 import { MainInterceptor } from './interceptor/main.interceptor';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
-  declarations: [AppComponent, LoaderComponent, ScrollToTopComponent],
+  declarations: [AppComponent, LoaderComponent, ScrollToTopComponent, HeaderComponent, FooterComponent, HomeComponent, LayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

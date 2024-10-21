@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+  { path: 'home', component: HomeComponent }, // مسار الصفحة الرئيسية
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // المسار الافتراضي
   {
     path: 'quran',
     loadChildren: () =>
@@ -33,7 +36,7 @@ const routes: Routes = [
         (m) => m.AzkarAndDuaModule
       ),
   },
-  { path: '', redirectTo: '/quran', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home' }, // مسار الأخطاء
 ];
 
 @NgModule({

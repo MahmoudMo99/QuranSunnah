@@ -6,7 +6,6 @@ header {
 .navbar-brand span {
   color: var(--lightSecondaryColor) !important;
   font-weight: bold;
-  font-size: 2rem;
 }
 
 .nav-link {
@@ -20,7 +19,7 @@ header {
 }
 .active {
   color: var(--lightSecondaryColor) !important;
-  font-size: 1.5rem !important;
+  font-size: 1.4rem !important;
   font-weight: 400 !important;
 }
 

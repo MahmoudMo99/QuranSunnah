@@ -15,9 +15,19 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { ClickOutsideNavDirective } from './directives/click-outside-nav.directive';
 
 @NgModule({
-  declarations: [AppComponent, LoaderComponent, ScrollToTopComponent, HeaderComponent, FooterComponent, HomeComponent, LayoutComponent],
+  declarations: [
+    AppComponent,
+    LoaderComponent,
+    ScrollToTopComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    LayoutComponent,
+    ClickOutsideNavDirective,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

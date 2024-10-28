@@ -1,11 +1,9 @@
 #islamicSlider .carousel-caption h5 {
-  font-size: 2.5rem !important;
   color: #fff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 #islamicSlider .carousel-caption p {
-  font-size: 1.8rem !important;
   color: #ddd;
 }
 .carousel-item {
@@ -21,6 +19,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   bottom: 40px;
+  border-radius: 10px;
 }
 
 /* تخصيص شكل زر السهم الأيسر (السابق) */
@@ -63,7 +62,6 @@
 /* ------------------------------------------------- */
 
 .section-title {
-  font-size: 2.5rem;
   font-weight: bold;
   color: var(--secondaryColor);
   text-align: right;
@@ -107,12 +105,6 @@
 }
 /* for mobile */
 @media (max-width: 768px) {
-  .carousel-caption h5 {
-    font-size: 1.2rem;
-  }
-  .carousel-caption p {
-    font-size: 0.9rem;
-  }
   .carousel-item {
     height: 30rem;
   }

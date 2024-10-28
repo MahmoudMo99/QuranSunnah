@@ -1,6 +1,5 @@
 header {
   background-color: var(--lightMainColor) !important;
-  font-family: "Cairo", sans-serif;
 }
 
 .navbar-brand span {
@@ -15,11 +14,11 @@ header {
 
 .nav-link:hover {
   color: var(--lightSecondaryColor);
-  font-size: 1.4rem !important;
+  font-size: 1.6rem !important;
 }
 .active {
   color: var(--lightSecondaryColor) !important;
-  font-size: 1.4rem !important;
+  font-size: 1.6rem !important;
   font-weight: 400 !important;
 }
 

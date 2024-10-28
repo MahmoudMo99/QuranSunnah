@@ -1,12 +1,12 @@
 .surah-card {
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: white;
   cursor: pointer;
   transition: all 0.2s;
   border: 1px solid var(--lightMainColor);
 }
 .fullQuran-card {
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: white;
   cursor: pointer;
   transition: all 0.2s;

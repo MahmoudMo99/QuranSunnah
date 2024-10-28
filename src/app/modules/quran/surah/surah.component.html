@@ -5,11 +5,11 @@
       <div>
         <div class="row d-flex align-items-center surah-header py-3 mb-4">
           <div class=" col-12 col-md-4 d-flex justify-content-center justify-content-md-start pb-3 pb-md-0">
-            <h2 class="surah-name m-0">{{ surahData.name }}</h2>
+            <h2 class="m-0">{{ surahData.name }}</h2>
           </div>
           <div class=" col-12 col-md-4 d-flex justify-content-center pb-3 pb-md-0">
             <!-- <p class="m-0 fs-3"> تبدأ من صفحة : {{ surahData.ayahs[0].page }}</p> -->
-            <p class="m-0 fs-3"> عدد آياتها : {{ surahData.ayahs.length }}</p>
+            <p class="m-0 fs-2"> عدد آياتها : {{ surahData.ayahs.length }}</p>
 
           </div>
           <div class=" col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
@@ -18,10 +18,10 @@
           </div>
         </div>
 
-        <h5 class="bismillah text-center fs-1" *ngIf="surahData.number !== 9 && surahData.number !== 1">{{
+        <h1 class="bismillah text-center" *ngIf="surahData.number !== 9 && surahData.number !== 1">{{
           bismillah
           }}
-        </h5>
+        </h1>
         <div *ngFor="let page of paginatedSurah">
           <div class="ayahs text-center">
             <span *ngFor="let ayah of page.ayahs" (click)="onAyahClick(ayah.number , ayah.text)">

@@ -14,5 +14,6 @@ body {
   --secondaryColor: #9c7d27;
   --lightSecondaryColor: #d7fe13;
   --thirdColor: #ff9822;
-  font-family: "Tajawal", "sans-serif";
+
+  font-family: "Tajawal", "sans-serif" !important;
 }

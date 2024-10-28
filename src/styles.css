@@ -11,7 +11,8 @@ body {
   background-color: #eee;
   --mainColor: #10375a;
   --lightMainColor: #164d8f;
-  --secondaryColor: #d8b600;
+  --secondaryColor: #9c7d27;
   --lightSecondaryColor: #d7fe13;
+  --thirdColor: #ff9822;
   font-family: "Tajawal", "sans-serif";
 }

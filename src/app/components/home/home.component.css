@@ -1,0 +1,133 @@
+#islamicSlider .carousel-caption h5 {
+  font-size: 2.5rem !important;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#islamicSlider .carousel-caption p {
+  font-size: 1.8rem !important;
+  color: #ddd;
+}
+.carousel-item {
+  height: 43rem;
+}
+.carousel-inner img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  display: block !important;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  bottom: 40px;
+}
+
+/* تخصيص شكل زر السهم الأيسر (السابق) */
+.carousel-control-prev-icon {
+  background-image: none;
+  border: 2px solid #fff;
+  background-color: var(--mainColor);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-control-prev-icon::before {
+  content: "›";
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* تخصيص شكل زر السهم الأيمن (التالي) */
+.carousel-control-next-icon {
+  background-image: none;
+  border: 2px solid #fff;
+  background-color: var(--mainColor);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-control-next-icon::before {
+  content: "‹";
+  font-size: 1.5rem;
+  color: #fff;
+}
+/* ------------------------------------------------- */
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--secondaryColor);
+  text-align: right;
+}
+
+.section-content {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.53;
+}
+
+.section-content span {
+  color: var(--secondaryColor);
+  font-weight: bold;
+}
+
+.decorative-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondaryColor);
+}
+
+.box-container {
+  margin-top: 13px;
+}
+
+.img-box {
+  border: 5px solid var(--secondaryColor);
+  position: relative;
+  overflow: visible;
+  border-radius: 10px;
+}
+
+.mosque-img {
+  width: 100%;
+  position: relative;
+  bottom: 1rem;
+  left: 1rem;
+  border-radius: 10px;
+}
+/* for mobile */
+@media (max-width: 768px) {
+  .carousel-caption h5 {
+    font-size: 1.2rem;
+  }
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+  .carousel-item {
+    height: 30rem;
+  }
+  .mosque-img {
+    bottom: 0rem;
+    left: 0rem;
+    border-radius: 5px;
+  }
+}
+/* for tablet */
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .mosque-img {
+    bottom: 0rem;
+    left: 0rem;
+    border-radius: 5px;
+  }
+}

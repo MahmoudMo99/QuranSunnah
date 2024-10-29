@@ -1,0 +1,83 @@
+<div class="row justify-content-between">
+  <div class="col-12 mb-3">
+    <h1 class="section-title">مواقيت الصلاة</h1>
+    <div class="decorative-line"></div>
+  </div>
+
+  <div class="col-12 col-md-12 col-lg-6 position-relative box-container">
+
+    <div *ngIf="prayerTimes" class="date-info mb-2 fs-4">
+      <p class="date-item">
+        <span class="label"> اليوم الموافق</span>
+        <span class="value">{{ prayerTimes.date.hijri.weekday.ar }} - {{ prayerTimes.date.gregorian.weekday.en }}</span>
+      </p>
+
+      <p class="date-item">
+        <span class="label">التاريخ الميلادي </span>
+        <span class="value">
+          ( {{ getArabicNumber(prayerTimes.date.gregorian.date) }} ) ||
+          {{ prayerTimes.date.gregorian.date }}
+
+        </span>
+      </p>
+      <p class="date-item">
+        <span class="label">التاريخ الهجري </span>
+        <span class="value">
+          ( {{ getArabicNumber(prayerTimes.date.hijri.date) }} ) ||
+          {{ prayerTimes.date.hijri.date }}
+
+        </span>
+      </p>
+    </div>
+
+    <div class="img-box">
+      <img src="../../../assets/pray-2.jpg" alt="صورة مسجد" class="mosque-img">
+    </div>
+  </div>
+
+  <div class="col-12 col-md-12 col-lg-6 mt-4 mt-lg-0">
+    <div class="prayer-times-section">
+      <label class="fs-4 text-white" for="city-select">اختر المدينة</label>
+      <select class="fs-4" id="city-select" [(ngModel)]="selectedCity" (change)="onCityChange()">
+        <option *ngFor="let city of cities" [value]="city.name">{{ city.arabicName }}</option>
+      </select>
+      <div *ngIf="prayerTimes" class="prayer-timings fs-4">
+        <ul>
+          <li class="d-flex justify-content-between">
+            <span>الفجر</span>
+            <span>{{ getFormattedTime(prayerTimes.timings.Fajr) }}</span>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>الشروق</span>
+            <span>{{ getFormattedTime(prayerTimes.timings.Sunrise) }}</span>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>الظهر</span>
+            <span>{{ getFormattedTime(prayerTimes.timings.Dhuhr) }}</span>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>العصر</span>
+            <span>{{ getFormattedTime(prayerTimes.timings.Asr) }}</span>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>الغروب</span>
+            <span>{{ getFormattedTime(prayerTimes.timings.Sunset) }}</span>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>المغرب</span>
+            <span>{{ getFormattedTime(prayerTimes.timings.Maghrib) }}</span>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>العشاء</span>
+            <span>{{ getFormattedTime(prayerTimes.timings.Isha) }}</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+</div>

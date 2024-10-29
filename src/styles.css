@@ -6,14 +6,15 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-body {
-  background-color: #eee;
+:root {
   --mainColor: #10375a;
   --lightMainColor: #164d8f;
   --secondaryColor: #9c7d27;
   --lightSecondaryColor: #d7fe13;
   --thirdColor: #ff9822;
+}
+body {
+  background-color: #eee;
 
   font-family: "Tajawal", "sans-serif" !important;
 }

@@ -95,14 +95,21 @@
   overflow: visible;
   border-radius: 10px;
 }
-
 .mosque-img {
   width: 100%;
   position: relative;
   bottom: 1rem;
   left: 1rem;
   border-radius: 10px;
+  transition: all 0.3s ease-in-out;
 }
+
+.mosque-img:hover {
+  bottom: 0rem;
+  left: 0rem;
+  border-radius: 5px;
+}
+
 /* for mobile */
 @media (max-width: 768px) {
   .carousel-item {

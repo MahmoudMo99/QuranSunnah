@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { QuranModule } from './modules/quran/quran.module';
 import { AzkarAndDuaModule } from './modules/azkar-and-dua/azkar-and-dua.module';
@@ -16,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ClickOutsideNavDirective } from './directives/click-outside-nav.directive';
+import { PrayerTimesComponent } from './components/prayer-times/prayer-times.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +29,12 @@ import { ClickOutsideNavDirective } from './directives/click-outside-nav.directi
     HomeComponent,
     LayoutComponent,
     ClickOutsideNavDirective,
+    PrayerTimesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     QuranModule,
     AzkarAndDuaModule,

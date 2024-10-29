@@ -1,8 +1,7 @@
 @import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
-
 body {
   background-color: #eee;
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family: "Tajawal", "sans-serif" !important;
 }
 * {
   padding: 0;

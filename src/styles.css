@@ -1,6 +1,9 @@
 @import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400&family=Fira+Sans:ital,wght@1,300&family=Jua&family=Reem+Kufi&family=Roboto+Slab:wght@300&display=swap");
 
+body {
+  background-color: #eee;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
 * {
   padding: 0;
   margin: 0;
@@ -12,9 +15,4 @@
   --secondaryColor: #9c7d27;
   --lightSecondaryColor: #d7fe13;
   --thirdColor: #ff9822;
-}
-body {
-  background-color: #eee;
-
-  font-family: "Tajawal", "sans-serif" !important;
 }

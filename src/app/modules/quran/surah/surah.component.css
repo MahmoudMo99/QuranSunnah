@@ -17,17 +17,17 @@
   font-size: 1.2rem;
   font-weight: bold;
 }
-.bismillah {
+/* .bismillah {
   font-family: "Amiri", serif !important;
-}
+} */
 .ayahs {
   display: block;
   line-height: 2.5;
 }
-.ayah {
+/* .ayah {
   display: inline;
   font-family: "Amiri", serif !important;
-}
+} */
 .ayah-number-circle {
   background-image: url("../../../../assets/download.png");
   display: inline-block;

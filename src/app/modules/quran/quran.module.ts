@@ -7,6 +7,7 @@ import { TafseerComponent } from './tafseer/tafseer.component';
 import { SurahComponent } from './surah/surah.component';
 import { FullQuranComponent } from './full-quran/full-quran.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,6 @@ import { FormsModule } from '@angular/forms';
     SurahComponent,
     FullQuranComponent,
   ],
-  imports: [CommonModule, QuranRoutingModule, FormsModule],
+  imports: [CommonModule, QuranRoutingModule, FormsModule, SharedModule],
 })
 export class QuranModule {}

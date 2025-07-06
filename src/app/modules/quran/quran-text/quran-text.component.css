@@ -1,36 +1,61 @@
-.surah-card {
-  border-radius: 10px;
-  background-color: white;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: 1px solid var(--lightMainColor);
-}
+/* البطاقات الأساسية */
+.surah-card,
 .fullQuran-card {
-  border-radius: 10px;
-  background-color: white;
+  border-radius: 12px;
+  background-color: #fff;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--lightMainColor);
+  overflow: hidden;
 }
-.surah-card:hover {
-  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
-}
+
+/* تأثير الـ Hover */
+.surah-card:hover,
 .fullQuran-card:hover {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* رقم السورة */
 .surah-number {
-  width: 2rem;
-  height: 2rem;
+  width: 2.3rem;
+  height: 2.3rem;
   border-radius: 50%;
   background-color: var(--lightMainColor);
+  transition: background-color 0.3s ease;
 }
+
 .surah-number span {
   color: white;
+  font-weight: bold;
 }
+
+/* اسم السورة */
 .surah-name {
   color: var(--mainColor);
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
+
+/* الأيقونة */
+.surah-icon {
+  color: var(--mainColor);
+  transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+.small-icon {
+  font-size: 1rem; /* أصغر شوية */
+}
+
+/* حركة الأيقونة مع الـ hover */
+.surah-card:hover .surah-icon {
+  transform: rotate(-10deg) scale(1.2);
+  color: var(--secondaryColor);
+}
+
+/* القلب (قيد التطوير) */
 .icon-div {
   position: relative;
 }
@@ -51,10 +76,26 @@
 .heart-icon:hover .fa-solid {
   display: inline;
 }
+
+/* روابط الكروت */
 .card-link {
   display: block;
   height: 100%;
   width: 100%;
   text-decoration: none;
   color: inherit;
+}
+
+/* الفقرات */
+p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive تحسين المسافة بين الكروت */
+@media (max-width: 768px) {
+  .surah-card,
+  .fullQuran-card {
+    margin-bottom: 1rem;
+  }
 }
